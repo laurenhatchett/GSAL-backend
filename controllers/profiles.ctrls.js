@@ -24,6 +24,7 @@ const create = (req, res) => {
 
 //destroy a single holiday by its ID
 const destroy = (req, res) => {
+  console.log("destroy -req.params.id",req.params.id)
     db.Profile.findByIdAndDelete(req.params.id, (error, deletedProfile) => {
         //if no holiday is found, let the frontend know with the json error message
         if(!deletedProfile) return res.status(400).json({error: "Profile not found"})
@@ -38,6 +39,8 @@ const destroy = (req, res) => {
 // update a single profile
 
 const update = (req, res) => {
+  console.log("req.body",req.body)
+  console.log("update-req.params.id",req.params.id)
     db.Profile.findByIdAndUpdate(
       req.params.id, 
       {
@@ -50,13 +53,27 @@ const update = (req, res) => {
       return res.status(200).json(updatedProfile)
     });
   };
+
+  // show
+  // get single profile by id
+  const show = (req,res) =>{
+    console.log("show-req.params.id",req.params.id)
+    db.Profile.findById(
+      req.params.id,
+      (error, singleProfile) => {
+      if(error) return res.status(400).json({ error: error.message });
   
+      return res.status(200).json(singleProfile)
+    });
+  };
+
 
 
   module.exports = {
       index,
       create,
       destroy,
-      update
+      update,
+      show
   }
   
