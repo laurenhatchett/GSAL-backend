@@ -13,6 +13,7 @@ const corsOptions = {
   }
 }
 
+require('dotenv').config()
 /* == Internal Modules == */
 const routes = require('./routes');
 

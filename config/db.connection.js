@@ -1,10 +1,11 @@
 const mongoose = require('mongoose');
 
-const connectionStr = process.env.MONGODB_URI || 'mongodb://localhost:27017/profilesDB';
+const connectionStr = process.env.MONGODB_URI;
+//  || 'mongodb://localhost:27017/profilesDB';
 
 
 // set up connection with the DB
-mongoose.connect( connectionStr);
+mongoose.connect(connectionStr);
 
 // set up listeners to monitor the database connection
 mongoose.connection.on('connected', ()=> console.log('DB connected... 🙌🙌🙌'));
