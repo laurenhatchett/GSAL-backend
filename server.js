@@ -2,7 +2,7 @@
 const express = require('express')
 const cors = require('cors')
 // whitelist & corsOptions
-const whitelist = ['http://localhost:3000']
+const whitelist = ['http://localhost:3000',process.env.FRONTEND_URL]
 const corsOptions = {
   origin: function (origin, callback) {
     if (whitelist.indexOf(origin) !== -1 || (!origin)) {
@@ -32,7 +32,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 /* == Routes == */
-app.use("/profiles" , routes.profiles)
+
+app.use(routes.profiles)
 
 /* == Listen == */
 app.listen(PORT, () => {
