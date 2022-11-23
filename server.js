@@ -4,15 +4,15 @@ const cors = require('cors')
 // whitelist & corsOptions
 const whitelist = ['http://localhost:3000'
 ,process.env.FRONTEND_URL]
-const corsOptions = {
-  origin: function (origin, callback) {
-    if (whitelist.indexOf(origin) !== -1 || (!origin)) {
-      callback(null, true)
-    } else {
-      callback(new Error('Not allowed by CORS'))
-    }
-  }
-}
+// const corsOptions = {
+//   origin: function (origin, callback) {
+//     if (whitelist.indexOf(origin) !== -1 || (!origin)) {
+//       callback(null, true)
+//     } else {
+//       callback(new Error('Not allowed by CORS'))
+//     }
+//   }
+// }
 
 require('dotenv').config()
 /* == Internal Modules == */
@@ -28,7 +28,8 @@ const PORT = process.env.PORT || 3003;
 require('./config/db.connection');
 
 /* == Middleware == */
-app.use(cors(corsOptions)) 
+// app.use(cors(corsOptions)) 
+app.use(cors("*")) 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
