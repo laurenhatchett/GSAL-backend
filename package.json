@@ -6,8 +6,8 @@
     "mongoose": "^6.7.1"
   },
   "engines": {
-    "node": "18.8.0", 
-    "npm": "8.18.0"   
+    "node": "18.8.0",
+    "npm": "8.18.0"
   },
   "scripts": {
     "start": "node server.js"
@@ -27,5 +27,4 @@
     "url": "https://github.com/AmandaFrisk/GSAL-backend/issues"
   },
   "homepage": "https://github.com/AmandaFrisk/GSAL-backend#readme"
-
 }

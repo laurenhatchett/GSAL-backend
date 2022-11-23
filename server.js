@@ -33,7 +33,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 /* == Routes == */
-
+app.get('/', function (req, res) {
+	res.send('hello');
+});
 app.use("/profiles",routes.profiles)
 
 /* == Listen == */
