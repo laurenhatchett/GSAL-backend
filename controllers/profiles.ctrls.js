@@ -22,7 +22,7 @@ const create = (req, res) => {
     });
   };
 
-//destroy a single holiday by its ID
+//destroy a single profile by its ID
 const destroy = (req, res) => {
   console.log("destroy -req.params.id",req.params.id)
     db.Profile.findByIdAndDelete(req.params.id, (error, deletedProfile) => {
