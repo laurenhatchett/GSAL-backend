@@ -3,6 +3,10 @@ import 'dotenv.config.js'
 import express from 'express'
 import cors from 'cors'
 
+
+import { router as profilesRouter } from './routes/profiles.js'
+
+
 import './confirg/database.js'
 
 const app = express()
