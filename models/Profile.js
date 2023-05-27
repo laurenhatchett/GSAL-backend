@@ -15,6 +15,8 @@ const profileSchema = new Schema ({
     type: String, 
     required: true
   }
+  }, {
+    timestamps: true
 })
 
 const Profile = mongoose.model('Profile', profileSchema)

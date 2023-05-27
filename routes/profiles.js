@@ -10,7 +10,7 @@ const router = Router()
 
 /*-------- Protected Routes -----------*/
 
-// const ctrls = require('../controllers')
+router.use(decodeUserFromToken)
 
 // router.get('/', ctrls.profiles.index);
 // router.post('/', ctrls.profiles.create);
